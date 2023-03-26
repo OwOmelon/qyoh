@@ -110,7 +110,7 @@ watch(
 		>
 
 		<div
-			class="lg:absolute lg:self-end lg:row-start-5 lg:row-end-6 flex justify-center items-center gap-4 bg-white/30 w-full h-20 lg:h-16 lg:hover:h-[80px] rounded text-white lg:opacity-75 lg:hover:opacity-100 lg:hover:backdrop-blur-sm duration-500 hover:duration-150"
+			class="lg:absolute lg:self-end lg:row-start-5 lg:row-end-6 flex justify-center items-center gap-4 bg-white/30 w-full h-20 lg:h-16 lg:hover:h-[80px] lg:mb-2 rounded text-white lg:opacity-75 lg:hover:opacity-100 lg:hover:backdrop-blur-sm duration-500 hover:duration-150"
 		>
 			<button
 				@click="
