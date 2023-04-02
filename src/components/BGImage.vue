@@ -2,7 +2,6 @@
 const bg = ref(null);
 
 const activeBG = ref(0);
-const offset = ref(0);
 
 const currentBG = computed(() => {
 	return new URL(
@@ -11,49 +10,69 @@ const currentBG = computed(() => {
 	).href;
 });
 
-const pageHeight = computed(() => {
-	return document.body.scrollHeight;
-});
-
-const bgHeight = computed(() => {
-	return bg.value.height;
-});
-
-function setOffset() {
-	offset.value = window.scrollY;
-}
+const transitionDuration = 150;
+const imgChangeCoolDown = 10000;
 
 setInterval(() => {
 	activeBG.value++;
-}, 10000 - 150);
-
-// window.addEventListener("scroll", setOffset);
+}, imgChangeCoolDown - transitionDuration);
 </script>
 
 <template>
 	<div
 		class="fixed top-0 left-0 grid place-items-center w-screen h-screen overflow-hidden z-[-1]"
 	>
+		<img
+			src="../assets/bgimages/static.png"
+			class="absolute left-1/2 -translate-x-1/2 scale-[3] md:scale-[2] brightness-50"
+		/>
+
 		<Transition name="fade">
 			<img
 				ref="bg"
 				:key="currentBG"
 				:src="currentBG"
-				class="bg-slide absolute -translate-x-1/2 scale-[3] md:scale-[2] brightness-50 z-[-1]"
+				class="bg-slide absolute -translate-x-1/2 scale-[3] md:scale-[2] brightness-50"
 			/>
 		</Transition>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-.fade-bg-enter-active,
-.fade-bg-leave-active {
-	transition: opacity 150ms;
+.fade-bg-enter-active {
+	animation: img-enter 0.5s;
 }
 
-.fade-bg-enter-from,
-.fade-bg-leave-to {
-	opacity: 0;
+.fade-bg-leave-active {
+	animation: img-leave 0.5s;
+}
+
+@keyframes img-enter {
+	0% {
+		opacity: 0;
+	}
+
+	70% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes img-leave {
+	0% {
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
 .bg-slide {
