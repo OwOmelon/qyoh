@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from "@iconify/vue";
+
 const qyoh = useQyohStore();
 
 const diamondIcon = new URL(`../assets/diamond.png`, import.meta.url).href;
@@ -11,13 +13,18 @@ const diamondIcon = new URL(`../assets/diamond.png`, import.meta.url).href;
 
   <ShowCase />
 
+  <OverlayTip />
+
   <iframe
-    src="https://www.youtube.com/embed/vfX2qO_H2Xw"
+    src="https://www.youtube.com/embed/E-qcPdsJn8o"
     class="bg-white/25 w-[90%] max-w-[800px] p-3/ mx-auto border-[1px] border-white/25 rounded-lg aspect-video"
   />
 
-  <div class="bg-white/25 p-5 mt-10 border-[1px] border-white/25 text-center">
-    made by: OwOmelon#5644
+  <div
+    class="flex justify-center items-center bg-white/25/ p-10 mt-10 border-[1px]/ border-white/25/ text-center"
+  >
+    made by:
+    <Icon icon="ic:baseline-discord" class="w-8 h-8 ml-3 mr-2" /> OwOmelon#5644
   </div>
 
   <BGImage />
