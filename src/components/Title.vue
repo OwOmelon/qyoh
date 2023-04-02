@@ -7,7 +7,7 @@
 		<h1 class="drop-shadow-[0_10px_10px_rgba(0,0,0,0.50)] text-4xl font-bold">
 			QYOH BUNDLE
 		</h1>
-		<p class="text-sm">made for bedrock pc 1.18</p>
+		<p class="text-sm">made for bedrock pc 1.18 x86</p>
 		<p class="text-[7px]">
 			why did i make a website for a pack bundle? idk i'm just a silly man :P
 		</p>
