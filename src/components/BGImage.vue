@@ -16,14 +16,14 @@ const imgChangeCoolDown = 10000;
 
 setInterval(() => {
 	activeBG.value++;
-	console.log("start", activeBG.value);
+	// console.log("start", activeBG.value);
 
 	let nextImg = new Image();
 	nextImg.src = getImage(activeBG.value + 1);
 
-	nextImg.onload = () => {
-		console.log("loaded", nextImg.src);
-	};
+	// nextImg.onload = () => {
+	// 	console.log("loaded", nextImg.src);
+	// };
 }, imgChangeCoolDown - transitionDuration);
 </script>
 
@@ -31,11 +31,6 @@ setInterval(() => {
 	<div
 		class="fixed top-0 left-0 grid place-items-center w-screen h-screen overflow-hidden z-[-1]"
 	>
-		<!-- <img
-			src="../assets/bgimages/static.png"
-			class="absolute left-1/2 -translate-x-1/2 scale-[3] md:scale-[2] brightness-50"
-		/> -->
-
 		<Transition name="fade">
 			<img
 				ref="bg"
